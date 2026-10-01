@@ -4,19 +4,11 @@
 
 <meta charset="utf-8">
 
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
->
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>WoW Twitch Poll</title>
 
-
 <style>
-
-/* =========================================
-   BASE
-========================================= */
 
 *{
   box-sizing:border-box;
@@ -26,47 +18,26 @@ html,
 body{
   margin:0;
   padding:0;
-
   width:100%;
   height:100%;
-
   overflow:hidden;
-
   background:transparent;
 }
 
 body{
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+  font-family:Georgia,"Times New Roman",serif;
 }
-
-
-/* =========================================
-   WIDGET
-========================================= */
 
 .wow-poll{
   width:100%;
   height:100%;
-
   padding:12px;
 }
 
-
-/* =========================================
-   MARCO EXTERIOR
-========================================= */
-
 .frame{
-
   position:relative;
-
   width:100%;
-
   min-height:100px;
-
   padding:9px;
 
   background:
@@ -81,7 +52,6 @@ body{
     );
 
   border:2px solid #11100e;
-
   border-radius:5px;
 
   box-shadow:
@@ -90,47 +60,26 @@ body{
     0 4px 8px rgba(0,0,0,.8);
 }
 
-
 .frame:before{
-
   content:"";
-
   position:absolute;
-
   inset:4px;
-
   border:1px solid #887b60;
-
   pointer-events:none;
 }
-
 
 .frame:after{
-
   content:"";
-
   position:absolute;
-
   inset:7px;
-
   border:1px solid #0b0a08;
-
   pointer-events:none;
 }
 
-
-/* =========================================
-   INTERIOR
-========================================= */
-
 .frame-inner{
-
   position:relative;
 
-  padding:
-    38px
-    22px
-    18px;
+  padding:38px 22px 18px;
 
   background:
     linear-gradient(
@@ -149,26 +98,14 @@ body{
   border-radius:2px;
 }
 
-
-/* =========================================
-   TITULO
-========================================= */
-
 .title-plate{
-
   position:absolute;
-
   top:-14px;
-
   left:50%;
-
-  transform:
-    translateX(-50%);
+  transform:translateX(-50%);
 
   width:225px;
-
   height:43px;
-
   padding:3px;
 
   background:
@@ -180,7 +117,6 @@ body{
     );
 
   border:2px solid #16130f;
-
   border-radius:5px;
 
   box-shadow:
@@ -188,35 +124,24 @@ body{
     0 2px 5px rgba(0,0,0,.8);
 }
 
-
 .title-plate:before{
-
   content:"";
-
   position:absolute;
-
   inset:3px;
-
   border:1px solid #776b52;
-
   pointer-events:none;
 }
 
-
 .title-text{
-
   height:100%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   color:#e8c96d;
 
   font-size:22px;
-
   font-weight:bold;
 
   text-shadow:
@@ -224,36 +149,19 @@ body{
     0 0 2px #000;
 
   white-space:nowrap;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
 
-  padding:
-    0 10px;
+  padding:0 10px;
 }
 
-
-/* =========================================
-   OPCIONES
-========================================= */
-
 .options{
-
   display:flex;
-
   flex-direction:column;
-
   gap:9px;
 }
 
-
-/* =========================================
-   FILA
-========================================= */
-
 .poll-option{
-
   position:relative;
 
   height:48px;
@@ -269,73 +177,46 @@ body{
     );
 
   border:2px solid #160b08;
-
   border-radius:4px;
 
   box-shadow:
-    inset 0 1px 0
-      rgba(255,219,161,.38),
-
-    inset 0 -2px 3px
-      rgba(0,0,0,.8),
-
-    0 1px 1px
-      rgba(0,0,0,.7);
+    inset 0 1px 0 rgba(255,219,161,.38),
+    inset 0 -2px 3px rgba(0,0,0,.8),
+    0 1px 1px rgba(0,0,0,.7);
 }
 
-
 .poll-option:before{
-
   content:"";
-
   position:absolute;
-
   inset:2px;
 
-  border:
-    1px solid #a77b49;
-
+  border:1px solid #a77b49;
   border-radius:2px;
 
   opacity:.7;
-
   pointer-events:none;
 }
 
-
 .poll-option:after{
-
   content:"";
-
   position:absolute;
 
   left:3px;
-
   right:3px;
-
   top:3px;
 
   height:1px;
 
-  background:
-    rgba(255,218,166,.32);
+  background:rgba(255,218,166,.32);
 
   pointer-events:none;
 }
 
-
-/* =========================================
-   BARRA DE PORCENTAJE
-========================================= */
-
 .fill{
-
   position:absolute;
 
   left:0;
-
   top:0;
-
   bottom:0;
 
   width:0%;
@@ -349,83 +230,51 @@ body{
     );
 
   box-shadow:
-    inset 0 1px 0
-      rgba(255,235,157,.75),
-
-    inset 0 -2px 4px
-      rgba(45,24,4,.6),
-
-    0 0 6px
-      rgba(215,164,57,.25);
+    inset 0 1px 0 rgba(255,235,157,.75),
+    inset 0 -2px 4px rgba(45,24,4,.6),
+    0 0 6px rgba(215,164,57,.25);
 
   transition:
-    width
-    .45s
-    cubic-bezier(.2,.75,.25,1);
+    width .45s cubic-bezier(.2,.75,.25,1);
 }
 
-
 .fill:after{
-
   content:"";
 
   position:absolute;
 
   right:0;
-
   top:0;
-
   bottom:0;
 
   width:3px;
 
-  background:
-    rgba(255,231,142,.7);
+  background:rgba(255,231,142,.7);
 
   box-shadow:
-    0 0 5px
-      rgba(255,214,90,.75);
+    0 0 5px rgba(255,214,90,.75);
 }
 
-
-/* =========================================
-   CONTENIDO DE OPCION
-========================================= */
-
 .option-content{
-
   position:relative;
-
   z-index:2;
 
   height:100%;
 
   display:flex;
-
   align-items:center;
 
-  padding:
-    0 9px;
+  padding:0 9px;
 }
 
-
-/* =========================================
-   NUMERO
-========================================= */
-
 .number{
-
   width:30px;
-
   height:30px;
 
-  flex:
-    0 0 30px;
+  flex:0 0 30px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:
@@ -436,9 +285,7 @@ body{
       #67502f
     );
 
-  border:
-    1px solid #332412;
-
+  border:1px solid #332412;
   border-radius:3px;
 
   box-shadow:
@@ -448,22 +295,13 @@ body{
   color:#20160d;
 
   font-size:16px;
-
   font-weight:bold;
 
-  text-shadow:
-    0 1px #dfc58e;
+  text-shadow:0 1px #dfc58e;
 }
 
-
-/* =========================================
-   NOMBRE OPCION
-========================================= */
-
 .name{
-
   flex:1;
-
   min-width:0;
 
   margin-left:11px;
@@ -471,28 +309,18 @@ body{
   color:#f0e1c3;
 
   font-size:18px;
-
   font-weight:bold;
 
   white-space:nowrap;
-
   overflow:hidden;
-
   text-overflow:ellipsis;
 
   text-shadow:
     1px 1px 2px #000,
-    -1px -1px 0
-      rgba(0,0,0,.45);
+    -1px -1px 0 rgba(0,0,0,.45);
 }
 
-
-/* =========================================
-   PORCENTAJE
-========================================= */
-
 .percent{
-
   width:62px;
 
   text-align:right;
@@ -500,24 +328,15 @@ body{
   color:#f1ddb0;
 
   font-size:15px;
-
   font-weight:bold;
 
-  text-shadow:
-    1px 1px 2px #000;
+  text-shadow:1px 1px 2px #000;
 }
 
-
-/* =========================================
-   SEPARADOR
-========================================= */
-
 .bottom-line{
-
   height:3px;
 
-  margin:
-    15px 4px 12px;
+  margin:15px 4px 12px;
 
   background:
     linear-gradient(
@@ -530,51 +349,32 @@ body{
     );
 
   box-shadow:
-    0 1px 0
-      rgba(255,230,176,.35);
+    0 1px 0 rgba(255,230,176,.35);
 }
 
-
-/* =========================================
-   FOOTER
-========================================= */
-
 .footer{
-
   display:flex;
-
   justify-content:space-between;
 
-  padding:
-    0 5px;
+  padding:0 5px;
 
   color:#302415;
 
   font-size:13px;
-
   font-weight:bold;
 
   text-shadow:
-    0 1px
-      rgba(237,211,158,.55);
+    0 1px rgba(237,211,158,.55);
 }
-
 
 .footer b{
   color:#19130d;
 }
 
-
-/* =========================================
-   ESTADO
-========================================= */
-
 .status{
-
   position:absolute;
 
   right:8px;
-
   bottom:3px;
 
   font-family:Arial,sans-serif;
@@ -586,16 +386,13 @@ body{
   opacity:.75;
 }
 
-
 .status.live{
   color:#416b37;
 }
 
-
 .status.error{
   color:#762e25;
 }
-
 
 .status.ended{
   color:#3c3021;
@@ -605,18 +402,13 @@ body{
 
 </head>
 
-
 <body>
-
 
 <div class="wow-poll">
 
   <div class="frame">
 
     <div class="frame-inner">
-
-
-      <!-- TITULO -->
 
       <div class="title-plate">
 
@@ -629,21 +421,12 @@ body{
 
       </div>
 
-
-      <!-- OPCIONES -->
-
       <div
         id="options"
         class="options"
       ></div>
 
-
-      <!-- SEPARADOR -->
-
       <div class="bottom-line"></div>
-
-
-      <!-- INFORMACION -->
 
       <div class="footer">
 
@@ -659,16 +442,12 @@ body{
 
       </div>
 
-
-      <!-- ESTADO -->
-
       <div
         id="status"
         class="status"
       >
         ● CONNECTING
       </div>
-
 
     </div>
 
@@ -677,20 +456,28 @@ body{
 </div>
 
 
-<script>
+<!--
+==================================================
+TMI.JS
+CONEXIÓN ANÓNIMA
+SIN TOKEN
+SIN OAUTH
+==================================================
+-->
 
-/* =========================================
-   INICIO
-========================================= */
+<script src="https://cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
+
+
+<script>
 
 (function(){
 
 "use strict";
 
 
-/* =========================================
-   LEER VARIABLES DE POGly
-========================================= */
+/* =================================================
+   VARIABLES DE POGly
+================================================= */
 
 const params =
   new URLSearchParams(
@@ -698,34 +485,26 @@ const params =
   );
 
 
-/* =========================================
-   CANAL
-========================================= */
+const channel =
+  (
+    params.get("channel")
+    ||
+    "rubius"
+  )
+  .trim()
+  .toLowerCase()
+  .replace(/^#/,"");
 
-const channel = (
-
-  params.get("channel")
-  || "rubius"
-
-)
-.trim()
-.toLowerCase()
-.replace(/^#/,"");
-
-
-/* =========================================
-   PREGUNTA
-========================================= */
 
 const question =
-
   params.get("question")
-  || "¿Qué debería jugar?";
+  ||
+  "¿Qué debería jugar?";
 
 
-/* =========================================
+/* =================================================
    OPCIONES
-========================================= */
+================================================= */
 
 const optionValues = [];
 
@@ -736,20 +515,15 @@ for(
   i++
 ){
 
-  const value = (
+  const value =
+    (
+      params.get(
+        "option" + i
+      )
+      ||
+      ""
+    ).trim();
 
-    params.get(
-      "option" + i
-    )
-    || ""
-
-  ).trim();
-
-
-  /*
-    SOLO agregamos opciones
-    que realmente tengan texto.
-  */
 
   if(value){
 
@@ -762,49 +536,40 @@ for(
 }
 
 
-/* =========================================
-   CONFIGURACION
-========================================= */
+/* =================================================
+   CONFIGURACIÓN
+================================================= */
 
 const DURATION =
-  60 * 1000;
-
-
-/*
-  Evita ráfagas de mensajes.
-*/
+  60000;
 
 const COOLDOWN =
   500;
 
 
-/* =========================================
+/* =================================================
    ELEMENTOS
-========================================= */
+================================================= */
 
 const questionEl =
   document.getElementById(
     "question"
   );
 
-
 const optionsEl =
   document.getElementById(
     "options"
   );
-
 
 const votesEl =
   document.getElementById(
     "votes"
   );
 
-
 const timeEl =
   document.getElementById(
     "time"
   );
-
 
 const statusEl =
   document.getElementById(
@@ -812,17 +577,17 @@ const statusEl =
   );
 
 
-/* =========================================
-   PONER PREGUNTA
-========================================= */
+/* =================================================
+   PREGUNTA
+================================================= */
 
 questionEl.textContent =
   question;
 
 
-/* =========================================
-   DATOS DE VOTOS
-========================================= */
+/* =================================================
+   VOTOS
+================================================= */
 
 const counts =
   new Array(
@@ -834,30 +599,31 @@ const voters =
   new Set();
 
 
-let total = 0;
+let total =
+  0;
 
 
-let lastAccepted = 0;
+let lastVote =
+  0;
 
 
-let ended = false;
+let ended =
+  false;
 
 
-/*
-  El contador comienza al cargar
-  el widget.
-*/
+/* =================================================
+   TIEMPO
+================================================= */
 
 const startedAt =
   Date.now();
 
 
-/* =========================================
-   CREAR OPCIONES
-========================================= */
+/* =================================================
+   CREAR FILAS
+================================================= */
 
 optionValues.forEach(
-
   function(
     name,
     index
@@ -880,17 +646,13 @@ optionValues.forEach(
       '<div class="option-content">' +
 
         '<div class="number">' +
-
           (index + 1) +
-
         '</div>' +
 
         '<div class="name"></div>' +
 
         '<div class="percent">' +
-
           '0.0%' +
-
         '</div>' +
 
       '</div>';
@@ -909,13 +671,8 @@ optionValues.forEach(
     );
 
   }
-
 );
 
-
-/* =========================================
-   REFERENCIAS A LAS FILAS
-========================================= */
 
 const rows =
   Array.from(
@@ -925,13 +682,13 @@ const rows =
   );
 
 
-/* =========================================
+/* =================================================
    STATUS
-========================================= */
+================================================= */
 
 function setStatus(
   text,
-  cls
+  className
 ){
 
   statusEl.textContent =
@@ -940,15 +697,15 @@ function setStatus(
   statusEl.className =
     "status " +
     (
-      cls || ""
+      className || ""
     );
 
 }
 
 
-/* =========================================
-   ACTUALIZAR PORCENTAJES
-========================================= */
+/* =================================================
+   RENDER
+================================================= */
 
 function render(){
 
@@ -957,23 +714,21 @@ function render(){
 
 
   rows.forEach(
-
     function(
       row,
-      i
+      index
     ){
 
       const pct =
-
-        total
-
-          ? (
-              counts[i]
-              /
-              total
-            ) * 100
-
-          : 0;
+        total > 0
+          ?
+          (
+            counts[index]
+            /
+            total
+          ) * 100
+          :
+          0;
 
 
       row
@@ -982,7 +737,6 @@ function render(){
         )
         .style
         .width =
-
         pct + "%";
 
 
@@ -991,31 +745,28 @@ function render(){
           ".percent"
         )
         .textContent =
-
         pct.toFixed(1)
         + "%";
 
     }
-
   );
 
 }
 
 
-/* =========================================
-   TERMINAR ENCUESTA
-========================================= */
+/* =================================================
+   TERMINAR
+================================================= */
 
 function finish(){
 
   if(ended){
-
     return;
-
   }
 
 
-  ended = true;
+  ended =
+    true;
 
 
   timeEl.textContent =
@@ -1030,14 +781,13 @@ function finish(){
 }
 
 
-/* =========================================
+/* =================================================
    RELOJ
-========================================= */
+================================================= */
 
-function clock(){
+function updateClock(){
 
   const elapsed =
-
     Date.now()
     -
     startedAt;
@@ -1056,26 +806,22 @@ function clock(){
 
 
   const seconds =
-
     Math.floor(
       elapsed / 1000
     );
 
 
   const minutes =
-
     Math.floor(
       seconds / 60
     );
 
 
   const remaining =
-
     seconds % 60;
 
 
   timeEl.textContent =
-
     minutes
     +
     ":"
@@ -1091,39 +837,27 @@ function clock(){
 }
 
 
-/* =========================================
-   REGISTRAR VOTO
-========================================= */
+/* =================================================
+   VOTO
+================================================= */
 
-function vote(
+function acceptVote(
   userId,
   number
 ){
 
-  /*
-    Encuesta terminada.
-  */
-
   if(ended){
-
     return;
-
   }
 
-
-  /*
-    Usuario inexistente.
-  */
 
   if(!userId){
-
     return;
-
   }
 
 
   /*
-    Este usuario ya votó.
+    Un voto por usuario.
   */
 
   if(
@@ -1138,7 +872,7 @@ function vote(
 
 
   /*
-    Cooldown.
+    Anti-spam.
   */
 
   const now =
@@ -1146,9 +880,8 @@ function vote(
 
 
   if(
-    now
-    -
-    lastAccepted
+    now -
+    lastVote
     <
     COOLDOWN
   ){
@@ -1159,22 +892,8 @@ function vote(
 
 
   /*
-    Número inválido.
-  */
-
-  if(
-    !Number.isInteger(
-      number
-    )
-  ){
-
-    return;
-
-  }
-
-
-  /*
-    La opción debe existir.
+    La opción tiene
+    que existir.
   */
 
   if(
@@ -1188,18 +907,10 @@ function vote(
   }
 
 
-  /*
-    Guardar usuario.
-  */
-
   voters.add(
     userId
   );
 
-
-  /*
-    Guardar voto.
-  */
 
   counts[
     number - 1
@@ -1209,7 +920,7 @@ function vote(
   total++;
 
 
-  lastAccepted =
+  lastVote =
     now;
 
 
@@ -1218,16 +929,11 @@ function vote(
 }
 
 
-/* =========================================
-   PRIMER RENDER
-========================================= */
+/* =================================================
+   ESTADO INICIAL
+================================================= */
 
 render();
-
-
-/* =========================================
-   STATUS INICIAL
-========================================= */
 
 setStatus(
   "● CONNECTING",
@@ -1235,23 +941,24 @@ setStatus(
 );
 
 
-/* =========================================
-   INICIAR TMI
-========================================= */
+/* =================================================
+   CONEXIÓN TMI
+================================================= */
 
-function startTmi(){
+function connectTwitch(){
 
   /*
-    Si TMI no cargó.
+    Comprobar que la librería
+    cargó correctamente.
   */
 
   if(
-    typeof tmi ===
+    typeof window.tmi ===
     "undefined"
   ){
 
     setStatus(
-      "● CHAT ERROR",
+      "● TMI NOT LOADED",
       "error"
     );
 
@@ -1261,11 +968,25 @@ function startTmi(){
 
 
   /*
-    Crear cliente Twitch.
+    CONEXIÓN ANÓNIMA.
+
+    NO:
+
+    identity
+    oauth
+    token
+
+    Solo:
+
+    channels
   */
 
   const client =
-    new tmi.Client({
+    new window.tmi.Client({
+
+      channels:[
+        channel
+      ],
 
       options:{
         skipMembership:true,
@@ -1275,18 +996,14 @@ function startTmi(){
       connection:{
         secure:true,
         reconnect:true
-      },
-
-      channels:[
-        channel
-      ]
+      }
 
     });
 
 
-  /* =====================================
-     CONECTANDO
-  ===================================== */
+  /* ===============================================
+     CONNECTING
+  =============================================== */
 
   client.on(
     "connecting",
@@ -1305,18 +1022,21 @@ function startTmi(){
   );
 
 
-  /* =====================================
-     CONECTADO
-  ===================================== */
+  /* ===============================================
+     CONNECTED
+  =============================================== */
 
   client.on(
     "connected",
-    function(){
+    function(
+      address,
+      port
+    ){
 
       if(!ended){
 
         setStatus(
-          "● LIVE",
+          "● CHAT READY",
           "live"
         );
 
@@ -1326,59 +1046,31 @@ function startTmi(){
   );
 
 
-  /* =====================================
-     DESCONECTADO
-  ===================================== */
-
-  client.on(
-    "disconnected",
-    function(){
-
-      if(!ended){
-
-        setStatus(
-          "● RECONNECTING",
-          "error"
-        );
-
-      }
-
-    }
-  );
-
-
-  /* =====================================
-     MENSAJE DEL CHAT
-  ===================================== */
+  /* ===============================================
+     MESSAGE
+  =============================================== */
 
   client.on(
     "message",
     function(
-      receivedChannel,
+      channelName,
       tags,
       message,
       self
     ){
 
       /*
-        Ignorar nuestros propios mensajes.
+        No contar mensajes
+        generados por nosotros.
       */
 
       if(self){
-
         return;
-
       }
 
 
-      /*
-        Encuesta terminada.
-      */
-
       if(ended){
-
         return;
-
       }
 
 
@@ -1387,14 +1079,13 @@ function startTmi(){
       */
 
       const text =
-
         String(
           message || ""
         ).trim();
 
 
       /*
-        SOLO acepta:
+        SOLO:
 
         1
         2
@@ -1418,14 +1109,17 @@ function startTmi(){
 
 
       /*
-        ID del usuario.
+        ID DE TWITCH.
 
-        Twitch normalmente proporciona
-        user-id en los tags.
+        Preferimos user-id.
+
+        Si el servidor anónimo
+        no lo proporciona,
+        utilizamos username
+        como respaldo.
       */
 
       const userId =
-
         String(
           tags["user-id"]
           ||
@@ -1436,17 +1130,15 @@ function startTmi(){
 
 
       if(!userId){
-
         return;
-
       }
 
 
       /*
-        Registrar voto.
+        REGISTRAR VOTO.
       */
 
-      vote(
+      acceptVote(
         userId,
         parseInt(
           text,
@@ -1458,15 +1150,76 @@ function startTmi(){
   );
 
 
-  /* =====================================
+  /* ===============================================
+     DISCONNECTED
+  =============================================== */
+
+  client.on(
+    "disconnected",
+    function(){
+
+      if(!ended){
+
+        setStatus(
+          "● RECONNECTING",
+          "error"
+        );
+
+      }
+
+    }
+  );
+
+
+  /* ===============================================
+     ERROR
+  =============================================== */
+
+  client.on(
+    "log",
+    function(message){
+
+      /*
+        No mostramos todos los logs
+        en pantalla porque ensuciarían
+        el diseño.
+      */
+
+      console.log(
+        "[TMI]",
+        message
+      );
+
+    }
+  );
+
+
+  /* ===============================================
      CONECTAR
-  ===================================== */
+  =============================================== */
 
   client
     .connect()
-    .catch(
 
+    .then(
       function(){
+
+        console.log(
+          "[POLL] Twitch connected:",
+          channel
+        );
+
+      }
+    )
+
+    .catch(
+      function(error){
+
+        console.error(
+          "[POLL] Twitch connection error:",
+          error
+        );
+
 
         if(!ended){
 
@@ -1478,101 +1231,93 @@ function startTmi(){
         }
 
       }
-
     );
 
 }
 
 
-/* =========================================
-   CARGAR TMI.JS
-========================================= */
+/* =================================================
+   ESPERAR A QUE TMI CARGUE
+================================================= */
 
-function loadScript(
-  src,
-  onDone
+if(
+  typeof window.tmi !==
+  "undefined"
 ){
 
-  const script =
-    document.createElement(
-      "script"
+  connectTwitch();
+
+}
+
+else{
+
+  /*
+    Esperar un poco por si
+    el CDN todavía está cargando.
+  */
+
+  let attempts =
+    0;
+
+
+  const waitForTmi =
+    setInterval(
+      function(){
+
+        attempts++;
+
+
+        if(
+          typeof window.tmi !==
+          "undefined"
+        ){
+
+          clearInterval(
+            waitForTmi
+          );
+
+
+          connectTwitch();
+
+          return;
+
+        }
+
+
+        /*
+          50 intentos × 100ms
+          = 5 segundos.
+        */
+
+        if(
+          attempts >= 50
+        ){
+
+          clearInterval(
+            waitForTmi
+          );
+
+
+          setStatus(
+            "● TMI NOT LOADED",
+            "error"
+          );
+
+        }
+
+      },
+      100
     );
-
-
-  script.src =
-    src;
-
-
-  script.onload =
-    onDone;
-
-
-  script.onerror =
-    function(){
-
-      onDone();
-
-    };
-
-
-  document.head.appendChild(
-    script
-  );
 
 }
 
 
-/*
-  Primer CDN
-*/
-
-loadScript(
-
-  "https://cdn.tmijs.org/js/latest/1.x/tmi.min.js",
-
-  function(){
-
-    /*
-      Si cargó correctamente,
-      iniciamos TMI.
-    */
-
-    if(
-      typeof tmi !==
-      "undefined"
-    ){
-
-      startTmi();
-
-    }
-
-    else{
-
-      /*
-        Segundo CDN.
-      */
-
-      loadScript(
-
-        "https://cdn.jsdelivr.net/npm/tmi.js@1.8.5/dist/tmi.min.js",
-
-        startTmi
-
-      );
-
-    }
-
-  }
-
-);
-
-
-/* =========================================
+/* =================================================
    RELOJ
-========================================= */
+================================================= */
 
 setInterval(
-  clock,
+  updateClock,
   100
 );
 
