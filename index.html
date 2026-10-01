@@ -1,1 +1,1170 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WoW Twitch Poll</title>
 
+<style>
+*{box-sizing:border-box}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background:transparent;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+}
+
+.wow-poll{
+  width:100%;
+  height:100%;
+  padding:12px;
+}
+
+.frame{
+  position:relative;
+  width:100%;
+  min-height:100px;
+  padding:9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #171512,
+      #4b4437 7%,
+      #171513 13%,
+      #292722 50%,
+      #151411 87%,
+      #514a3d
+    );
+
+  border:2px solid #11100e;
+  border-radius:5px;
+
+  box-shadow:
+    0 0 0 1px #756a55,
+    0 0 0 3px #211e19,
+    0 4px 8px rgba(0,0,0,.8);
+}
+
+.frame:before{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border:1px solid #887b60;
+  pointer-events:none;
+}
+
+.frame:after{
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid #0b0a08;
+  pointer-events:none;
+}
+
+.frame-inner{
+  position:relative;
+
+  padding:38px 22px 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #cdb98d 0%,
+      #b69a68 48%,
+      #a98b5b 100%
+    );
+
+  border:2px solid #3a2b1b;
+
+  box-shadow:
+    inset 0 0 0 1px #e0c997,
+    inset 0 0 15px rgba(54,33,14,.55);
+
+  border-radius:2px;
+}
+
+.title-plate{
+  position:absolute;
+
+  top:-14px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:225px;
+  height:43px;
+
+  padding:3px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0e0d0b,
+      #625943 45%,
+      #181612
+    );
+
+  border:2px solid #16130f;
+  border-radius:5px;
+
+  box-shadow:
+    0 1px 0 #a49470,
+    0 2px 5px rgba(0,0,0,.8);
+}
+
+.title-plate:before{
+  content:"";
+  position:absolute;
+  inset:3px;
+
+  border:1px solid #776b52;
+
+  pointer-events:none;
+}
+
+.title-text{
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#e8c96d;
+
+  font-size:22px;
+  font-weight:bold;
+
+  text-shadow:
+    0 1px 2px #000,
+    0 0 2px #000;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  padding:0 10px;
+}
+
+.options{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+}
+
+.poll-option{
+  position:relative;
+
+  height:48px;
+
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #260606 0%,
+      #680b0b 47%,
+      #3d0505 100%
+    );
+
+  border:2px solid #160b08;
+  border-radius:4px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,219,161,.38),
+    inset 0 -2px 3px rgba(0,0,0,.8),
+    0 1px 1px rgba(0,0,0,.7);
+}
+
+.poll-option:before{
+  content:"";
+
+  position:absolute;
+  inset:2px;
+
+  border:1px solid #a77b49;
+  border-radius:2px;
+
+  opacity:.7;
+
+  pointer-events:none;
+}
+
+.poll-option:after{
+  content:"";
+
+  position:absolute;
+
+  left:3px;
+  right:3px;
+  top:3px;
+
+  height:1px;
+
+  background:rgba(255,218,166,.32);
+
+  pointer-events:none;
+}
+
+.fill{
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:0%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #e0b64d 0%,
+      #b77b20 42%,
+      #70430e 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,235,157,.75),
+    inset 0 -2px 4px rgba(45,24,4,.6),
+    0 0 6px rgba(215,164,57,.25);
+
+  transition:
+    width .45s cubic-bezier(.2,.75,.25,1);
+}
+
+.fill:after{
+  content:"";
+
+  position:absolute;
+
+  right:0;
+  top:0;
+  bottom:0;
+
+  width:3px;
+
+  background:rgba(255,231,142,.7);
+
+  box-shadow:
+    0 0 5px rgba(255,214,90,.75);
+}
+
+.option-content{
+  position:relative;
+
+  z-index:2;
+
+  height:100%;
+
+  display:flex;
+  align-items:center;
+
+  padding:0 9px;
+}
+
+.number{
+  width:30px;
+  height:30px;
+
+  flex:0 0 30px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d7bf88,
+      #927445 48%,
+      #67502f
+    );
+
+  border:1px solid #332412;
+  border-radius:3px;
+
+  box-shadow:
+    inset 0 1px 0 #f0dcac,
+    0 1px 2px #000;
+
+  color:#20160d;
+
+  font-size:16px;
+  font-weight:bold;
+
+  text-shadow:
+    0 1px #dfc58e;
+}
+
+.name{
+  flex:1;
+  min-width:0;
+
+  margin-left:11px;
+
+  color:#f0e1c3;
+
+  font-size:18px;
+  font-weight:bold;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  text-shadow:
+    1px 1px 2px #000,
+    -1px -1px 0 rgba(0,0,0,.45);
+}
+
+.percent{
+  width:62px;
+
+  text-align:right;
+
+  color:#f1ddb0;
+
+  font-size:15px;
+  font-weight:bold;
+
+  text-shadow:
+    1px 1px 2px #000;
+}
+
+.bottom-line{
+  height:3px;
+
+  margin:15px 4px 12px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #5d472a 15%,
+      #d0b16c 50%,
+      #5d472a 85%,
+      transparent
+    );
+
+  box-shadow:
+    0 1px 0 rgba(255,230,176,.35);
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+
+  padding:0 5px;
+
+  color:#302415;
+
+  font-size:13px;
+  font-weight:bold;
+
+  text-shadow:
+    0 1px rgba(237,211,158,.55);
+}
+
+.footer b{
+  color:#19130d;
+}
+
+.status{
+  position:absolute;
+
+  right:8px;
+  bottom:3px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:8px;
+
+  color:#645238;
+
+  opacity:.75;
+}
+
+.status.live{
+  color:#416b37;
+}
+
+.status.error{
+  color:#762e25;
+}
+
+.status.ended{
+  color:#3c3021;
+}
+
+.hidden{
+  display:none!important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wow-poll">
+
+  <div class="frame">
+
+    <div class="frame-inner">
+
+      <div class="title-plate">
+        <div
+          class="title-text"
+          id="question"
+        >
+          ¿Qué debería jugar?
+        </div>
+      </div>
+
+      <div
+        id="options"
+        class="options"
+      ></div>
+
+      <div class="bottom-line"></div>
+
+      <div class="footer">
+
+        <span>
+          Unique votes:
+          <b id="votes">0</b>
+        </span>
+
+        <span>
+          Time active:
+          <b id="time">0:00</b>
+        </span>
+
+      </div>
+
+      <div
+        id="status"
+        class="status"
+      >
+        ● CONNECTING
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/tmi.js@1.8.5/dist/tmi.min.js"></script>
+
+<script>
+(function(){
+
+"use strict";
+
+
+/* =========================================
+   CONFIGURACIÓN
+========================================= */
+
+const POLL_DURATION = 60 * 1000;
+
+/*
+  Tiempo mínimo entre votos aceptados.
+
+  Esto NO limita a cada usuario.
+  El límite de 1 voto por usuario
+  se controla mediante user-id.
+
+  Este cooldown evita una ráfaga de
+  mensajes actualizando la encuesta
+  cientos de veces por segundo.
+*/
+const VOTE_COOLDOWN = 500;
+
+
+/* =========================================
+   VARIABLES DE URL
+========================================= */
+
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const channel =
+  (
+    params.get("channel")
+    || "rubius"
+  )
+  .trim()
+  .toLowerCase()
+  .replace(/^#/,"");
+
+
+const question =
+  params.get("question")
+  || "¿Qué debería jugar?";
+
+
+/* =========================================
+   OPCIONES
+========================================= */
+
+const optionValues = [];
+
+for(let i=1;i<=8;i++){
+
+  const value =
+    (
+      params.get("option"+i)
+      || ""
+    ).trim();
+
+  if(value){
+    optionValues.push(value);
+  }
+
+}
+
+
+/* =========================================
+   ELEMENTOS
+========================================= */
+
+const questionEl =
+  document.getElementById("question");
+
+const optionsEl =
+  document.getElementById("options");
+
+const votesEl =
+  document.getElementById("votes");
+
+const timeEl =
+  document.getElementById("time");
+
+const statusEl =
+  document.getElementById("status");
+
+
+questionEl.textContent =
+  question;
+
+
+/* =========================================
+   CREAR OPCIONES
+========================================= */
+
+const counts =
+  new Array(
+    optionValues.length
+  ).fill(0);
+
+
+optionValues.forEach(
+  function(name,index){
+
+    const row =
+      document.createElement("div");
+
+    row.className =
+      "poll-option";
+
+    row.innerHTML =
+
+      '<div class="fill"></div>' +
+
+      '<div class="option-content">' +
+
+        '<div class="number">' +
+          (index + 1) +
+        '</div>' +
+
+        '<div class="name"></div>' +
+
+        '<div class="percent">' +
+          '0.0%' +
+        '</div>' +
+
+      '</div>';
+
+
+    row
+      .querySelector(".name")
+      .textContent = name;
+
+
+    optionsEl.appendChild(row);
+
+  }
+);
+
+
+const rows =
+  Array.from(
+    document.querySelectorAll(
+      ".poll-option"
+    )
+  );
+
+
+/* =========================================
+   ESTADO
+========================================= */
+
+const voters =
+  new Set();
+
+let totalVotes = 0;
+
+let lastAcceptedVote = 0;
+
+let startedAt = null;
+
+let pollEnded = false;
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+function setStatus(
+  text,
+  className
+){
+
+  statusEl.textContent =
+    text;
+
+  statusEl.className =
+    "status " +
+    (className || "");
+
+}
+
+
+/* =========================================
+   ACTUALIZAR BARRAS
+========================================= */
+
+function render(){
+
+  votesEl.textContent =
+    String(totalVotes);
+
+
+  rows.forEach(
+    function(row,index){
+
+      const percentage =
+        totalVotes > 0
+          ? (
+              counts[index]
+              / totalVotes
+            ) * 100
+          : 0;
+
+
+      const fill =
+        row.querySelector(
+          ".fill"
+        );
+
+
+      const percent =
+        row.querySelector(
+          ".percent"
+        );
+
+
+      fill.style.width =
+        percentage + "%";
+
+
+      percent.textContent =
+        percentage.toFixed(1)
+        + "%";
+
+    }
+  );
+
+}
+
+
+/* =========================================
+   FINALIZAR ENCUESTA
+========================================= */
+
+function finishPoll(){
+
+  if(pollEnded){
+    return;
+  }
+
+
+  pollEnded = true;
+
+
+  timeEl.textContent =
+    "1:00";
+
+
+  setStatus(
+    "● ENDED",
+    "ended"
+  );
+
+}
+
+
+/* =========================================
+   RELOJ
+========================================= */
+
+function updateClock(){
+
+  if(startedAt === null){
+    return;
+  }
+
+
+  const elapsed =
+    Date.now() -
+    startedAt;
+
+
+  if(
+    elapsed >=
+    POLL_DURATION
+  ){
+
+    finishPoll();
+
+    return;
+
+  }
+
+
+  const seconds =
+    Math.floor(
+      elapsed / 1000
+    );
+
+
+  const minutes =
+    Math.floor(
+      seconds / 60
+    );
+
+
+  const remainingSeconds =
+    seconds % 60;
+
+
+  timeEl.textContent =
+
+    minutes +
+    ":" +
+    (
+      remainingSeconds < 10
+        ? "0"
+        : ""
+    ) +
+    remainingSeconds;
+
+}
+
+
+/* =========================================
+   REGISTRAR VOTO
+========================================= */
+
+function acceptVote(
+  userId,
+  optionNumber
+){
+
+  if(pollEnded){
+    return;
+  }
+
+
+  if(!userId){
+    return;
+  }
+
+
+  /*
+    Un voto por usuario.
+
+    userId viene de Twitch:
+    tags["user-id"]
+  */
+
+  if(
+    voters.has(userId)
+  ){
+
+    return;
+
+  }
+
+
+  /*
+    Cooldown global.
+  */
+
+  const now =
+    Date.now();
+
+
+  if(
+    now -
+    lastAcceptedVote <
+    VOTE_COOLDOWN
+  ){
+
+    return;
+
+  }
+
+
+  /*
+    Validar opción.
+  */
+
+  if(
+    !Number.isInteger(
+      optionNumber
+    )
+  ){
+
+    return;
+
+  }
+
+
+  if(
+    optionNumber < 1 ||
+    optionNumber > rows.length
+  ){
+
+    return;
+
+  }
+
+
+  /*
+    Registrar usuario.
+  */
+
+  voters.add(
+    userId
+  );
+
+
+  /*
+    Registrar voto.
+  */
+
+  counts[
+    optionNumber - 1
+  ]++;
+
+
+  totalVotes++;
+
+
+  lastAcceptedVote =
+    now;
+
+
+  /*
+    Actualizar pantalla.
+  */
+
+  render();
+
+}
+
+
+/* =========================================
+   ESTADO INICIAL
+========================================= */
+
+render();
+
+
+/* =========================================
+   COMPROBAR TMI.JS
+========================================= */
+
+if(
+  typeof tmi ===
+  "undefined"
+){
+
+  setStatus(
+    "● TMI ERROR",
+    "error"
+  );
+
+  return;
+
+}
+
+
+/* =========================================
+   CLIENTE TWITCH
+========================================= */
+
+const client =
+  new tmi.Client({
+
+    options:{
+      skipMembership:true,
+      debug:false
+    },
+
+    connection:{
+      secure:true,
+      reconnect:true
+    },
+
+    channels:[
+      channel
+    ]
+
+  });
+
+
+/* =========================================
+   TWITCH: CONECTANDO
+========================================= */
+
+client.on(
+  "connecting",
+  function(){
+
+    if(!pollEnded){
+
+      setStatus(
+        "● CONNECTING",
+        ""
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   TWITCH: CONECTADO
+========================================= */
+
+client.on(
+  "connected",
+  function(){
+
+    /*
+      El cronómetro comienza
+      solamente cuando Twitch
+      realmente conecta.
+
+      Esto evita que la encuesta
+      termine mientras todavía
+      estamos intentando conectar.
+    */
+
+    if(
+      startedAt === null
+    ){
+
+      startedAt =
+        Date.now();
+
+    }
+
+
+    if(!pollEnded){
+
+      setStatus(
+        "● LIVE",
+        "live"
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   TWITCH: DESCONECTADO
+========================================= */
+
+client.on(
+  "disconnected",
+  function(){
+
+    if(!pollEnded){
+
+      setStatus(
+        "● RECONNECTING",
+        "error"
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   MENSAJES DEL CHAT
+========================================= */
+
+client.on(
+  "message",
+  function(
+    receivedChannel,
+    tags,
+    message,
+    self
+  ){
+
+    /*
+      Ignorar mensajes propios.
+    */
+
+    if(self){
+      return;
+    }
+
+
+    /*
+      Si terminó la encuesta,
+      ignorar todo.
+    */
+
+    if(pollEnded){
+      return;
+    }
+
+
+    /*
+      Limpiar mensaje.
+    */
+
+    const text =
+      String(
+        message || ""
+      ).trim();
+
+
+    /*
+      SOLAMENTE:
+
+      1
+      2
+      3
+      ...
+      8
+
+      son comandos válidos.
+    */
+
+    if(
+      !/^[1-8]$/.test(text)
+    ){
+
+      return;
+
+    }
+
+
+    /*
+      Obtener ID REAL de Twitch.
+
+      Este es el dato que evita
+      que una persona vote dos veces.
+    */
+
+    const userId =
+      String(
+        tags["user-id"] || ""
+      ).trim();
+
+
+    /*
+      Si Twitch no proporciona
+      user-id, no contamos el voto.
+
+      Es más seguro que utilizar
+      el nombre visible.
+    */
+
+    if(!userId){
+      return;
+    }
+
+
+    const optionNumber =
+      parseInt(
+        text,
+        10
+      );
+
+
+    acceptVote(
+      userId,
+      optionNumber
+    );
+
+  }
+);
+
+
+/* =========================================
+   CONECTAR A TWITCH
+========================================= */
+
+client
+  .connect()
+  .catch(
+    function(){
+
+      if(!pollEnded){
+
+        setStatus(
+          "● TWITCH ERROR",
+          "error"
+        );
+
+      }
+
+    }
+  );
+
+
+/* =========================================
+   RELOJ
+========================================= */
+
+setInterval(
+  updateClock,
+  100
+);
+
+
+})();
+</script>
+
+</body>
+</html>
