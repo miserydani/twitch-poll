@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 
 <meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
+    name="viewport"
+    content="width=device-width,initial-scale=1.0"
 >
 
 <title>WoW Twitch Poll</title>
@@ -20,27 +20,30 @@
 ========================================================= */
 
 *{
-  box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html,
 body{
-  margin:0;
-  padding:0;
 
-  width:100%;
-  height:100%;
+    width:100%;
+    height:100%;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  background:transparent;
+    background:transparent;
+
 }
 
 body{
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
 }
 
 
@@ -49,9 +52,12 @@ body{
 ========================================================= */
 
 .wow-poll{
-  width:100%;
-  height:100%;
-  padding:12px;
+
+    width:100%;
+    height:100%;
+
+    padding:12px;
+
 }
 
 
@@ -61,57 +67,70 @@ body{
 
 .frame{
 
-  position:relative;
+    position:relative;
 
-  width:100%;
-  min-height:100px;
+    width:100%;
+    height:100%;
 
-  padding:9px;
+    padding:9px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #171512,
-      #4b4437 7%,
-      #171513 13%,
-      #292722 50%,
-      #151411 87%,
-      #514a3d
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #171512,
+            #4b4437 7%,
+            #171513 13%,
+            #292722 50%,
+            #151411 87%,
+            #514a3d
+        );
 
-  border:2px solid #11100e;
-  border-radius:5px;
+    border:
+        2px solid #11100e;
 
-  box-shadow:
-    0 0 0 1px #756a55,
-    0 0 0 3px #211e19,
-    0 4px 8px rgba(0,0,0,.8);
+    border-radius:5px;
+
+    box-shadow:
+
+        0 0 0 1px #756a55,
+
+        0 0 0 3px #211e19,
+
+        0 4px 8px
+        rgba(0,0,0,.8);
+
 }
+
 
 .frame:before{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  inset:4px;
+    inset:4px;
 
-  border:1px solid #887b60;
+    border:
+        1px solid #887b60;
 
-  pointer-events:none;
+    pointer-events:none;
+
 }
+
 
 .frame:after{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  inset:7px;
+    inset:7px;
 
-  border:1px solid #0b0a08;
+    border:
+        1px solid #0b0a08;
 
-  pointer-events:none;
+    pointer-events:none;
+
 }
 
 
@@ -121,28 +140,37 @@ body{
 
 .frame-inner{
 
-  position:relative;
+    position:relative;
 
-  padding:
-    38px
-    22px
-    18px;
+    width:100%;
+    height:100%;
 
-  background:
-    linear-gradient(
-      180deg,
-      #cdb98d 0%,
-      #b69a68 48%,
-      #a98b5b 100%
-    );
+    padding:
+        38px
+        22px
+        18px;
 
-  border:2px solid #3a2b1b;
+    background:
+        linear-gradient(
+            180deg,
+            #cdb98d 0%,
+            #b69a68 48%,
+            #a98b5b 100%
+        );
 
-  box-shadow:
-    inset 0 0 0 1px #e0c997,
-    inset 0 0 15px rgba(54,33,14,.55);
+    border:
+        2px solid #3a2b1b;
 
-  border-radius:2px;
+    box-shadow:
+
+        inset 0 0 0 1px
+        #e0c997,
+
+        inset 0 0 15px
+        rgba(54,33,14,.55);
+
+    border-radius:2px;
+
 }
 
 
@@ -152,72 +180,89 @@ body{
 
 .title-plate{
 
-  position:absolute;
+    position:absolute;
 
-  top:-14px;
-  left:50%;
+    top:-14px;
+    left:50%;
 
-  transform:
-    translateX(-50%);
+    transform:
+        translateX(-50%);
 
-  width:225px;
-  height:43px;
+    width:225px;
+    height:43px;
 
-  padding:3px;
+    padding:3px;
 
-  background:
-    linear-gradient(
-      180deg,
-      #0e0d0b,
-      #625943 45%,
-      #181612
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #0e0d0b,
+            #625943 45%,
+            #181612
+        );
 
-  border:2px solid #16130f;
-  border-radius:5px;
+    border:
+        2px solid #16130f;
 
-  box-shadow:
-    0 1px 0 #a49470,
-    0 2px 5px rgba(0,0,0,.8);
+    border-radius:5px;
+
+    box-shadow:
+
+        0 1px 0 #a49470,
+
+        0 2px 5px
+        rgba(0,0,0,.8);
+
 }
+
 
 .title-plate:before{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  inset:3px;
+    inset:3px;
 
-  border:1px solid #776b52;
+    border:
+        1px solid #776b52;
 
-  pointer-events:none;
+    pointer-events:none;
+
 }
+
 
 .title-text{
 
-  height:100%;
+    width:100%;
+    height:100%;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
-  justify-content:center;
+    align-items:center;
+    justify-content:center;
 
-  color:#e8c96d;
+    padding:
+        0 10px;
 
-  font-size:22px;
-  font-weight:bold;
+    color:#e8c96d;
 
-  text-shadow:
-    0 1px 2px #000,
-    0 0 2px #000;
+    font-size:22px;
 
-  white-space:nowrap;
+    font-weight:bold;
 
-  overflow:hidden;
-  text-overflow:ellipsis;
+    text-shadow:
 
-  padding:0 10px;
+        0 1px 2px #000,
+
+        0 0 2px #000;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
 }
 
 
@@ -227,11 +272,12 @@ body{
 
 .options{
 
-  display:flex;
+    display:flex;
 
-  flex-direction:column;
+    flex-direction:column;
 
-  gap:9px;
+    gap:9px;
+
 }
 
 
@@ -241,126 +287,138 @@ body{
 
 .poll-option{
 
-  position:relative;
+    position:relative;
 
-  height:48px;
+    height:48px;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  background:
-    linear-gradient(
-      180deg,
-      #260606 0%,
-      #680b0b 47%,
-      #3d0505 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #260606 0%,
+            #680b0b 47%,
+            #3d0505 100%
+        );
 
-  border:2px solid #160b08;
+    border:
+        2px solid #160b08;
 
-  border-radius:4px;
+    border-radius:4px;
 
-  box-shadow:
-    inset 0 1px 0
-      rgba(255,219,161,.38),
+    box-shadow:
 
-    inset 0 -2px 3px
-      rgba(0,0,0,.8),
+        inset 0 1px 0
+        rgba(255,219,161,.38),
 
-    0 1px 1px
-      rgba(0,0,0,.7);
+        inset 0 -2px 3px
+        rgba(0,0,0,.8),
+
+        0 1px 1px
+        rgba(0,0,0,.7);
+
 }
+
 
 .poll-option:before{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  inset:2px;
+    inset:2px;
 
-  border:1px solid #a77b49;
+    border:
+        1px solid #a77b49;
 
-  border-radius:2px;
+    border-radius:2px;
 
-  opacity:.7;
+    opacity:.7;
 
-  pointer-events:none;
+    pointer-events:none;
+
 }
+
 
 .poll-option:after{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  left:3px;
-  right:3px;
-  top:3px;
+    left:3px;
+    right:3px;
+    top:3px;
 
-  height:1px;
+    height:1px;
 
-  background:
-    rgba(255,218,166,.32);
+    background:
+        rgba(255,218,166,.32);
 
-  pointer-events:none;
+    pointer-events:none;
+
 }
 
 
 /* =========================================================
-   BARRA DORADA
+   BARRA DE PORCENTAJE
 ========================================================= */
 
 .fill{
 
-  position:absolute;
+    position:absolute;
 
-  left:0;
-  top:0;
-  bottom:0;
+    left:0;
+    top:0;
+    bottom:0;
 
-  width:0%;
+    width:0%;
 
-  background:
-    linear-gradient(
-      180deg,
-      #e0b64d 0%,
-      #b77b20 42%,
-      #70430e 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #e0b64d 0%,
+            #b77b20 42%,
+            #70430e 100%
+        );
 
-  box-shadow:
-    inset 0 1px 0
-      rgba(255,235,157,.75),
+    box-shadow:
 
-    inset 0 -2px 4px
-      rgba(45,24,4,.6),
+        inset 0 1px 0
+        rgba(255,235,157,.75),
 
-    0 0 6px
-      rgba(215,164,57,.25);
+        inset 0 -2px 4px
+        rgba(45,24,4,.6),
 
-  transition:
-    width .45s
-    cubic-bezier(.2,.75,.25,1);
+        0 0 6px
+        rgba(215,164,57,.25);
+
+    transition:
+        width .45s
+        cubic-bezier(.2,.75,.25,1);
+
 }
+
 
 .fill:after{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  right:0;
-  top:0;
-  bottom:0;
+    right:0;
+    top:0;
+    bottom:0;
 
-  width:3px;
+    width:3px;
 
-  background:
-    rgba(255,231,142,.7);
+    background:
+        rgba(255,231,142,.7);
 
-  box-shadow:
-    0 0 5px
-      rgba(255,214,90,.75);
+    box-shadow:
+        0 0 5px
+        rgba(255,214,90,.75);
+
 }
 
 
@@ -370,17 +428,19 @@ body{
 
 .option-content{
 
-  position:relative;
+    position:relative;
 
-  z-index:2;
+    z-index:2;
 
-  height:100%;
+    height:100%;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
+    align-items:center;
 
-  padding:0 9px;
+    padding:
+        0 9px;
+
 }
 
 
@@ -390,69 +450,79 @@ body{
 
 .number{
 
-  width:30px;
-  height:30px;
+    width:30px;
+    height:30px;
 
-  flex:0 0 30px;
+    flex:
+        0 0 30px;
 
-  display:flex;
+    display:flex;
 
-  align-items:center;
-  justify-content:center;
+    align-items:center;
+    justify-content:center;
 
-  background:
-    linear-gradient(
-      180deg,
-      #d7bf88,
-      #927445 48%,
-      #67502f
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #d7bf88,
+            #927445 48%,
+            #67502f
+        );
 
-  border:1px solid #332412;
+    border:
+        1px solid #332412;
 
-  border-radius:3px;
+    border-radius:3px;
 
-  box-shadow:
-    inset 0 1px 0 #f0dcac,
-    0 1px 2px #000;
+    box-shadow:
 
-  color:#20160d;
+        inset 0 1px 0 #f0dcac,
 
-  font-size:16px;
-  font-weight:bold;
+        0 1px 2px #000;
 
-  text-shadow:
-    0 1px #dfc58e;
+    color:#20160d;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 1px #dfc58e;
+
 }
 
 
 /* =========================================================
-   TEXTO OPCION
+   NOMBRE
 ========================================================= */
 
 .name{
 
-  flex:1;
+    flex:1;
 
-  min-width:0;
+    min-width:0;
 
-  margin-left:11px;
+    margin-left:11px;
 
-  color:#f0e1c3;
+    color:#f0e1c3;
 
-  font-size:18px;
+    font-size:18px;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  white-space:nowrap;
+    white-space:nowrap;
 
-  overflow:hidden;
+    overflow:hidden;
 
-  text-overflow:ellipsis;
+    text-overflow:ellipsis;
 
-  text-shadow:
-    1px 1px 2px #000,
-    -1px -1px 0 rgba(0,0,0,.45);
+    text-shadow:
+
+        1px 1px 2px #000,
+
+        -1px -1px 0
+        rgba(0,0,0,.45);
+
 }
 
 
@@ -462,18 +532,19 @@ body{
 
 .percent{
 
-  width:62px;
+    width:62px;
 
-  text-align:right;
+    text-align:right;
 
-  color:#f1ddb0;
+    color:#f1ddb0;
 
-  font-size:15px;
+    font-size:15px;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  text-shadow:
-    1px 1px 2px #000;
+    text-shadow:
+        1px 1px 2px #000;
+
 }
 
 
@@ -483,24 +554,25 @@ body{
 
 .bottom-line{
 
-  height:3px;
+    height:3px;
 
-  margin:
-    15px 4px 12px;
+    margin:
+        15px 4px 12px;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #5d472a 15%,
-      #d0b16c 50%,
-      #5d472a 85%,
-      transparent
-    );
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #5d472a 15%,
+            #d0b16c 50%,
+            #5d472a 85%,
+            transparent
+        );
 
-  box-shadow:
-    0 1px 0
-      rgba(255,230,176,.35);
+    box-shadow:
+        0 1px 0
+        rgba(255,230,176,.35);
+
 }
 
 
@@ -510,25 +582,30 @@ body{
 
 .footer{
 
-  display:flex;
+    display:flex;
 
-  justify-content:space-between;
+    justify-content:space-between;
 
-  padding:0 5px;
+    padding:
+        0 5px;
 
-  color:#302415;
+    color:#302415;
 
-  font-size:13px;
+    font-size:13px;
 
-  font-weight:bold;
+    font-weight:bold;
 
-  text-shadow:
-    0 1px
-      rgba(237,211,158,.55);
+    text-shadow:
+        0 1px
+        rgba(237,211,158,.55);
+
 }
 
+
 .footer b{
-  color:#19130d;
+
+    color:#19130d;
+
 }
 
 
@@ -538,30 +615,40 @@ body{
 
 .status{
 
-  position:absolute;
+    position:absolute;
 
-  right:8px;
-  bottom:3px;
+    right:8px;
+    bottom:3px;
 
-  font-family:Arial,sans-serif;
+    font-family:Arial,sans-serif;
 
-  font-size:8px;
+    font-size:8px;
 
-  color:#645238;
+    color:#645238;
 
-  opacity:.75;
+    opacity:.75;
+
 }
+
 
 .status.live{
-  color:#416b37;
+
+    color:#416b37;
+
 }
+
 
 .status.error{
-  color:#762e25;
+
+    color:#762e25;
+
 }
 
+
 .status.ended{
-  color:#3c3021;
+
+    color:#3c3021;
+
 }
 
 </style>
@@ -574,91 +661,118 @@ body{
 
 <div class="wow-poll">
 
-  <div class="frame">
+    <div class="frame">
 
-    <div class="frame-inner">
+        <div class="frame-inner">
 
 
-      <div class="title-plate">
+            <!-- =================================================
+                 TITULO
+            ================================================== -->
 
-        <div
-          class="title-text"
-          id="question"
-        >
-          ¿Qué debería jugar?
+            <div class="title-plate">
+
+                <div
+                    class="title-text"
+                    id="question"
+                >
+                    ¿Qué debería jugar?
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 OPCIONES
+            ================================================== -->
+
+            <div
+                id="options"
+                class="options"
+            ></div>
+
+
+            <!-- =================================================
+                 SEPARADOR
+            ================================================== -->
+
+            <div class="bottom-line"></div>
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+
+            <div class="footer">
+
+                <span>
+
+                    Unique votes:
+
+                    <b id="votes">
+                        0
+                    </b>
+
+                </span>
+
+
+                <span>
+
+                    Time active:
+
+                    <b id="time">
+                        0:00
+                    </b>
+
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 STATUS
+            ================================================== -->
+
+            <div
+                id="status"
+                class="status"
+            >
+                ● CONNECTING
+            </div>
+
+
         </div>
 
-      </div>
-
-
-      <div
-        id="options"
-        class="options"
-      ></div>
-
-
-      <div class="bottom-line"></div>
-
-
-      <div class="footer">
-
-        <span>
-          Unique votes:
-          <b id="votes">0</b>
-        </span>
-
-        <span>
-          Time active:
-          <b id="time">0:00</b>
-        </span>
-
-      </div>
-
-
-      <div
-        id="status"
-        class="status"
-      >
-        ● CONNECTING
-      </div>
-
-
     </div>
-
-  </div>
 
 </div>
 
 
-<!-- ========================================================
+<!-- =========================================================
      TMI.JS
-     
-     CDN OFICIAL DE TMI.JS PARA NAVEGADOR
-     
-     IMPORTANTE:
-     NO usar jsDelivr /dist/tmi.min.js
+
+     EXACTAMENTE EL MISMO RELEASE
+     QUE USA TU POKEMON TWITCH PLAYS
 ========================================================= -->
 
 <script
-  src="https://cdn.tmijs.org/js/latest/1.x/tmi.min.js"
+    src="https://github.com/tmijs/tmi.js/releases/download/v1.8.5/tmi.min.js"
 ></script>
 
 
 <script>
 
-(function(){
-
 "use strict";
 
 
 /* =========================================================
-   LEER VARIABLES DE POGly
+   CONFIGURACION
 ========================================================= */
 
 const params =
-  new URLSearchParams(
-    window.location.search
-  );
+    new URLSearchParams(
+        window.location.search
+    );
 
 
 /* =========================================================
@@ -666,14 +780,18 @@ const params =
 ========================================================= */
 
 const channel =
-  (
-    params.get("channel")
-    ||
-    "rubius"
-  )
-  .trim()
-  .toLowerCase()
-  .replace(/^#/,"");
+
+    (
+        params.get("channel")
+        ||
+        "rubius"
+    )
+
+    .replace("#","")
+
+    .trim()
+
+    .toLowerCase();
 
 
 /* =========================================================
@@ -681,9 +799,12 @@ const channel =
 ========================================================= */
 
 const question =
-  params.get("question")
-  ||
-  "¿Qué debería jugar?";
+
+    params.get("question")
+
+    ||
+
+    "¿Qué debería jugar?";
 
 
 /* =========================================================
@@ -694,42 +815,46 @@ const optionValues = [];
 
 
 for(
-  let i=1;
-  i<=8;
-  i++
+    let i = 1;
+    i <= 8;
+    i++
 ){
 
-  const value =
-    (
-      params.get(
-        "option"+i
-      )
-      ||
-      ""
-    ).trim();
+    const value =
+
+        (
+            params.get(
+                "option" + i
+            )
+            ||
+            ""
+        )
+
+        .trim();
 
 
-  if(value){
+    /*
+       Las opciones vacías
+       NO se crean.
+    */
 
-    optionValues.push(
-      value
-    );
+    if(value){
 
-  }
+        optionValues.push(
+            value
+        );
+
+    }
 
 }
 
 
 /* =========================================================
-   CONFIGURACION
+   CONFIG POLL
 ========================================================= */
 
 const POLL_DURATION =
-  60000;
-
-
-const VOTE_COOLDOWN =
-  500;
+    60 * 1000;
 
 
 /* =========================================================
@@ -737,33 +862,33 @@ const VOTE_COOLDOWN =
 ========================================================= */
 
 const questionEl =
-  document.getElementById(
-    "question"
-  );
+    document.getElementById(
+        "question"
+    );
 
 
 const optionsEl =
-  document.getElementById(
-    "options"
-  );
+    document.getElementById(
+        "options"
+    );
 
 
 const votesEl =
-  document.getElementById(
-    "votes"
-  );
+    document.getElementById(
+        "votes"
+    );
 
 
 const timeEl =
-  document.getElementById(
-    "time"
-  );
+    document.getElementById(
+        "time"
+    );
 
 
 const statusEl =
-  document.getElementById(
-    "status"
-  );
+    document.getElementById(
+        "status"
+    );
 
 
 /* =========================================================
@@ -771,41 +896,36 @@ const statusEl =
 ========================================================= */
 
 questionEl.textContent =
-  question;
+    question;
 
 
 /* =========================================================
-   DATOS DE VOTOS
+   ESTADO
 ========================================================= */
 
 const counts =
-  new Array(
-    optionValues.length
-  ).fill(0);
+
+    new Array(
+        optionValues.length
+    )
+
+    .fill(0);
 
 
 const voters =
-  new Set();
+    new Set();
 
 
 let totalVotes =
-  0;
-
-
-let lastAcceptedVote =
-  0;
+    0;
 
 
 let pollEnded =
-  false;
+    false;
 
-
-/* =========================================================
-   TIMER
-========================================================= */
 
 const startedAt =
-  Date.now();
+    Date.now();
 
 
 /* =========================================================
@@ -813,53 +933,59 @@ const startedAt =
 ========================================================= */
 
 optionValues.forEach(
-  function(
-    optionName,
-    index
-  ){
+    (
+        optionName,
+        index
+    ) => {
 
-    const row =
-      document.createElement(
-        "div"
-      );
-
-
-    row.className =
-      "poll-option";
+        const row =
+            document.createElement(
+                "div"
+            );
 
 
-    row.innerHTML =
-
-      '<div class="fill"></div>' +
-
-      '<div class="option-content">' +
-
-        '<div class="number">' +
-          (index + 1) +
-        '</div>' +
-
-        '<div class="name"></div>' +
-
-        '<div class="percent">' +
-          '0.0%' +
-        '</div>' +
-
-      '</div>';
+        row.className =
+            "poll-option";
 
 
-    row
-      .querySelector(
-        ".name"
-      )
-      .textContent =
-      optionName;
+        row.innerHTML =
+
+            '<div class="fill"></div>' +
+
+            '<div class="option-content">' +
+
+                '<div class="number">' +
+
+                    (
+                        index + 1
+                    )
+
+                + '</div>' +
+
+                '<div class="name"></div>' +
+
+                '<div class="percent">' +
+
+                    '0.0%'
+
+                + '</div>' +
+
+            '</div>';
 
 
-    optionsEl.appendChild(
-      row
-    );
+        row
+            .querySelector(
+                ".name"
+            )
+            .textContent =
+            optionName;
 
-  }
+
+        optionsEl.appendChild(
+            row
+        );
+
+    }
 );
 
 
@@ -868,11 +994,12 @@ optionValues.forEach(
 ========================================================= */
 
 const rows =
-  Array.from(
-    document.querySelectorAll(
-      ".poll-option"
-    )
-  );
+
+    Array.from(
+        document.querySelectorAll(
+            ".poll-option"
+        )
+    );
 
 
 /* =========================================================
@@ -880,20 +1007,17 @@ const rows =
 ========================================================= */
 
 function setStatus(
-  text,
-  className
+    text,
+    className = ""
 ){
 
-  statusEl.textContent =
-    text;
+    statusEl.textContent =
+        text;
 
 
-  statusEl.className =
-    "status " +
-    (
-      className ||
-      ""
-    );
+    statusEl.className =
+        "status " +
+        className;
 
 }
 
@@ -904,82 +1028,193 @@ function setStatus(
 
 function render(){
 
-  votesEl.textContent =
-    String(
-      totalVotes
-    );
-
-
-  rows.forEach(
-    function(
-      row,
-      index
-    ){
-
-      const percentage =
-        totalVotes > 0
-
-          ?
-
-          (
-            counts[index]
-            /
+    votesEl.textContent =
+        String(
             totalVotes
-          ) * 100
-
-          :
-
-          0;
+        );
 
 
-      row
-        .querySelector(
-          ".fill"
-        )
-        .style
-        .width =
-        percentage + "%";
+    rows.forEach(
+        (
+            row,
+            index
+        ) => {
+
+            const percentage =
+
+                totalVotes > 0
+
+                ?
+
+                (
+                    counts[index]
+                    /
+                    totalVotes
+                )
+                *
+                100
+
+                :
+
+                0;
 
 
-      row
-        .querySelector(
-          ".percent"
-        )
-        .textContent =
-        percentage.toFixed(1)
-        + "%";
+            const fill =
+                row.querySelector(
+                    ".fill"
+                );
 
-    }
-  );
+
+            const percent =
+                row.querySelector(
+                    ".percent"
+                );
+
+
+            fill.style.width =
+                percentage + "%";
+
+
+            percent.textContent =
+
+                percentage.toFixed(
+                    1
+                )
+
+                +
+
+                "%";
+
+        }
+    );
 
 }
 
 
 /* =========================================================
-   FINALIZAR
+   REGISTRAR VOTO
+========================================================= */
+
+function registerVote(
+    userId,
+    optionNumber
+){
+
+    if(pollEnded){
+
+        return;
+
+    }
+
+
+    if(!userId){
+
+        return;
+
+    }
+
+
+    /*
+       Un usuario solamente
+       puede votar una vez.
+    */
+
+    if(
+        voters.has(
+            userId
+        )
+    ){
+
+        console.log(
+            "[POLL] Usuario ya votó:",
+            userId
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Si escribió una opción
+       que no existe, ignorar.
+    */
+
+    if(
+        optionNumber < 1
+        ||
+        optionNumber > rows.length
+    ){
+
+        return;
+
+    }
+
+
+    /*
+       Registrar usuario.
+    */
+
+    voters.add(
+        userId
+    );
+
+
+    /*
+       Sumar voto.
+    */
+
+    counts[
+        optionNumber - 1
+    ]++;
+
+
+    totalVotes++;
+
+
+    console.log(
+        "[POLL] VOTO:",
+        userId,
+        "->",
+        optionNumber
+    );
+
+
+    render();
+
+}
+
+
+/* =========================================================
+   FINALIZAR POLL
 ========================================================= */
 
 function finishPoll(){
 
-  if(pollEnded){
+    if(pollEnded){
 
-    return;
+        return;
 
-  }
-
-
-  pollEnded =
-    true;
+    }
 
 
-  timeEl.textContent =
-    "1:00";
+    pollEnded =
+        true;
 
 
-  setStatus(
-    "● ENDED",
-    "ended"
-  );
+    timeEl.textContent =
+        "1:00";
+
+
+    setStatus(
+        "● ENDED",
+        "ended"
+    );
+
+
+    console.log(
+        "[POLL] Poll terminado"
+    );
 
 }
 
@@ -990,154 +1225,468 @@ function finishPoll(){
 
 function updateTimer(){
 
-  if(pollEnded){
+    if(pollEnded){
 
-    return;
+        return;
 
-  }
-
-
-  const elapsed =
-    Date.now()
-    -
-    startedAt;
+    }
 
 
-  if(
-    elapsed >=
-    POLL_DURATION
-  ){
+    const elapsed =
 
-    finishPoll();
-
-    return;
-
-  }
+        Date.now()
+        -
+        startedAt;
 
 
-  const totalSeconds =
-    Math.floor(
-      elapsed / 1000
-    );
+    if(
+        elapsed >=
+        POLL_DURATION
+    ){
+
+        finishPoll();
+
+        return;
+
+    }
 
 
-  const minutes =
-    Math.floor(
-      totalSeconds / 60
-    );
+    const totalSeconds =
+
+        Math.floor(
+            elapsed / 1000
+        );
 
 
-  const seconds =
-    totalSeconds % 60;
+    const minutes =
+
+        Math.floor(
+            totalSeconds / 60
+        );
 
 
-  timeEl.textContent =
-    minutes
-    +
-    ":"
-    +
-    (
-      seconds < 10
-        ? "0"
-        : ""
-    )
-    +
-    seconds;
+    const seconds =
+
+        totalSeconds % 60;
+
+
+    timeEl.textContent =
+
+        minutes
+
+        +
+
+        ":"
+
+        +
+
+        (
+            seconds < 10
+                ? "0"
+                : ""
+        )
+
+        +
+
+        seconds;
 
 }
 
 
+setInterval(
+    updateTimer,
+    100
+);
+
+
 /* =========================================================
-   REGISTRAR VOTO
+   TMI.JS
+   EXACTAMENTE EL SISTEMA DEL POKEMON
 ========================================================= */
 
-function registerVote(
-  userId,
-  optionNumber
-){
+function connectTwitch(){
 
-  if(pollEnded){
+    console.log(
+        "================================"
+    );
 
-    return;
+    console.log(
+        "[POLL] Conectando a Twitch:"
+    );
 
-  }
+    console.log(
+        channel
+    );
 
-
-  if(!userId){
-
-    return;
-
-  }
-
-
-  /*
-    Un usuario = un voto.
-  */
-
-  if(
-    voters.has(
-      userId
-    )
-  ){
-
-    return;
-
-  }
+    console.log(
+        "================================"
+    );
 
 
-  /*
-    Anti-spam.
-  */
-
-  const now =
-    Date.now();
+    setStatus(
+        "● CONNECTING",
+        ""
+    );
 
 
-  if(
-    now -
-    lastAcceptedVote
-    <
-    VOTE_COOLDOWN
-  ){
+    /*
+       Comprobar que TMI
+       realmente se cargó.
+    */
 
-    return;
+    if(
+        typeof tmi ===
+        "undefined"
+    ){
 
-  }
-
-
-  /*
-    Comprobar opción.
-  */
-
-  if(
-    optionNumber < 1
-    ||
-    optionNumber > rows.length
-  ){
-
-    return;
-
-  }
+        console.error(
+            "[POLL] TMI.js NO CARGÓ"
+        );
 
 
-  voters.add(
-    userId
-  );
+        setStatus(
+            "● TMI NOT LOADED",
+            "error"
+        );
 
 
-  counts[
-    optionNumber - 1
-  ]++;
+        return;
+
+    }
 
 
-  totalVotes++;
+    console.log(
+        "[POLL] TMI.js cargado correctamente"
+    );
 
 
-  lastAcceptedVote =
-    now;
+    /*
+       EXACTAMENTE COMO
+       TU PROYECTO POKEMON.
+    */
+
+    const client =
+
+        new tmi.Client({
+
+            options:{
+
+                debug:true
+
+            },
 
 
-  render();
+            connection:{
+
+                secure:true,
+
+                reconnect:true,
+
+                timeout:20000
+
+            },
+
+
+            channels:[
+
+                channel
+
+            ]
+
+        });
+
+
+    /* =====================================================
+       CONNECTING
+    ===================================================== */
+
+    client.on(
+        "connecting",
+        () => {
+
+            console.log(
+                "[POLL] TWITCH CONECTANDO..."
+            );
+
+
+            if(!pollEnded){
+
+                setStatus(
+                    "● CONNECTING",
+                    ""
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       CONNECTED
+    ===================================================== */
+
+    client.on(
+        "connected",
+        (
+            address,
+            port
+        ) => {
+
+            console.log(
+                "[POLL] TWITCH CONECTADO:",
+                address,
+                port
+            );
+
+
+            if(!pollEnded){
+
+                setStatus(
+                    "● CHAT READY",
+                    "live"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       MESSAGE
+
+       EXACTAMENTE EL MISMO
+       EVENTO DEL POKEMON
+    ===================================================== */
+
+    client.on(
+        "message",
+        (
+            channelName,
+            tags,
+            message,
+            self
+        ) => {
+
+            /*
+               Ignorar mensajes propios.
+            */
+
+            if(self){
+
+                return;
+
+            }
+
+
+            console.log(
+                "[POLL] MENSAJE:",
+                channelName,
+                message
+            );
+
+
+            /*
+               ID real del usuario.
+
+               user-id es preferible
+               a username porque
+               es estable.
+            */
+
+            const userId =
+
+                tags["user-id"]
+
+                ||
+
+                tags.username
+
+                ||
+
+                tags["display-name"]
+
+                ||
+
+                "";
+
+
+            const text =
+
+                String(
+                    message
+                    ||
+                    ""
+                )
+                .trim();
+
+
+            /*
+               Solamente aceptar:
+
+               1
+               2
+               3
+               4
+               5
+               6
+               7
+               8
+            */
+
+            if(
+                !/^[1-8]$/.test(
+                    text
+                )
+            ){
+
+                return;
+
+            }
+
+
+            const optionNumber =
+
+                parseInt(
+                    text,
+                    10
+                );
+
+
+            /*
+               Si la opción no existe
+               porque está vacía,
+               ignorar.
+            */
+
+            if(
+                optionNumber >
+                rows.length
+            ){
+
+                return;
+
+            }
+
+
+            registerVote(
+                userId,
+                optionNumber
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       RECONNECT
+    ===================================================== */
+
+    client.on(
+        "reconnect",
+        () => {
+
+            console.log(
+                "[POLL] TWITCH RECONECTANDO..."
+            );
+
+
+            if(!pollEnded){
+
+                setStatus(
+                    "● RECONNECTING",
+                    ""
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       DISCONNECTED
+    ===================================================== */
+
+    client.on(
+        "disconnected",
+        (
+            reason
+        ) => {
+
+            console.warn(
+                "[POLL] TWITCH DESCONECTADO:",
+                reason
+            );
+
+
+            if(!pollEnded){
+
+                setStatus(
+                    "● DISCONNECTED",
+                    "error"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       LOG
+    ===================================================== */
+
+    client.on(
+        "log",
+        (
+            message
+        ) => {
+
+            console.log(
+                "[TMI]",
+                message
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CONNECT
+    ===================================================== */
+
+    client.connect()
+
+        .then(
+            () => {
+
+                console.log(
+                    "[POLL] Solicitud de conexión enviada."
+                );
+
+            }
+        )
+
+        .catch(
+            (
+                error
+            ) => {
+
+                console.error(
+                    "[POLL] ERROR TWITCH:",
+                    error
+                );
+
+
+                setStatus(
+                    "● ERROR TWITCH",
+                    "error"
+                );
+
+            }
+        );
 
 }
 
@@ -1148,475 +1697,83 @@ function registerVote(
 
 render();
 
-setStatus(
-  "● CONNECTING",
-  ""
-);
 
+/*
+   Esperamos un poco para asegurarnos
+   de que el script externo de TMI
+   esté disponible.
+*/
 
-/* =========================================================
-   CONECTAR TMI
-========================================================= */
-
-function connectTwitch(){
-
-  /*
-    TMI debería existir como window.tmi.
-  */
-
-  if(
-    typeof window.tmi ===
+if(
+    typeof tmi !==
     "undefined"
-  ){
+){
 
-    console.error(
-      "[POLL] TMI.js NO está cargado"
-    );
+    connectTwitch();
 
+}
 
-    setStatus(
-      "● TMI ERROR",
-      "error"
-    );
+else{
 
-
-    return;
-
-  }
+    let attempts =
+        0;
 
 
-  console.log(
-    "[POLL] TMI.js cargado correctamente"
-  );
+    const checkTmi =
+
+        setInterval(
+            () => {
+
+                attempts++;
 
 
-  console.log(
-    "[POLL] Canal:",
-    channel
-  );
+                if(
+                    typeof tmi !==
+                    "undefined"
+                ){
+
+                    clearInterval(
+                        checkTmi
+                    );
 
 
-  /*
-    CONEXIÓN ANÓNIMA.
+                    connectTwitch();
 
-    Sin:
+                    return;
 
-    token
-    oauth
-    identity
-    bot
-  */
-
-  const client =
-    new window.tmi.Client({
-
-      options:{
-        debug:true,
-        skipMembership:true
-      },
-
-      connection:{
-        secure:true,
-        reconnect:true
-      },
-
-      channels:[
-        channel
-      ]
-
-    });
+                }
 
 
-  /* =======================================================
-     CONNECTING
-  ======================================================= */
+                if(
+                    attempts >= 50
+                ){
 
-  client.on(
-    "connecting",
-    function(
-      address,
-      port
-    ){
-
-      console.log(
-        "[POLL] Connecting:",
-        address,
-        port
-      );
+                    clearInterval(
+                        checkTmi
+                    );
 
 
-      if(!pollEnded){
+                    console.error(
+                        "[POLL] TMI.js no respondió."
+                    );
 
-        setStatus(
-          "● CONNECTING",
-          ""
+
+                    setStatus(
+                        "● TMI NOT LOADED",
+                        "error"
+                    );
+
+                }
+
+            },
+            100
         );
-
-      }
-
-    }
-  );
-
-
-  /* =======================================================
-     CONNECTED
-  ======================================================= */
-
-  client.on(
-    "connected",
-    function(
-      address,
-      port
-    ){
-
-      console.log(
-        "[POLL] CONNECTED:",
-        address,
-        port
-      );
-
-
-      if(!pollEnded){
-
-        setStatus(
-          "● CHAT READY",
-          "live"
-        );
-
-      }
-
-    }
-  );
-
-
-  /* =======================================================
-     JOIN
-  ======================================================= */
-
-  client.on(
-    "join",
-    function(
-      joinedChannel,
-      username,
-      self
-    ){
-
-      console.log(
-        "[POLL] JOIN:",
-        joinedChannel,
-        username,
-        self
-      );
-
-
-      if(
-        self &&
-        !pollEnded
-      ){
-
-        setStatus(
-          "● CHAT READY",
-          "live"
-        );
-
-      }
-
-    }
-  );
-
-
-  /* =======================================================
-     MENSAJES
-  ======================================================= */
-
-  client.on(
-    "message",
-    function(
-      receivedChannel,
-      tags,
-      message,
-      self
-    ){
-
-      console.log(
-        "[POLL] MESSAGE:",
-        receivedChannel,
-        message
-      );
-
-
-      /*
-        Ignorar mensajes propios.
-      */
-
-      if(self){
-
-        return;
-
-      }
-
-
-      if(pollEnded){
-
-        return;
-
-      }
-
-
-      const text =
-        String(
-          message ||
-          ""
-        ).trim();
-
-
-      /*
-        Solamente 1-8.
-      */
-
-      if(
-        !/^[1-8]$/.test(
-          text
-        )
-      ){
-
-        return;
-
-      }
-
-
-      /*
-        ID de Twitch.
-
-        Si no viene user-id,
-        usamos username como
-        respaldo.
-      */
-
-      const userId =
-        String(
-          tags["user-id"]
-          ||
-          tags.username
-          ||
-          ""
-        ).trim();
-
-
-      if(!userId){
-
-        return;
-
-      }
-
-
-      console.log(
-        "[POLL] VOTO:",
-        userId,
-        text
-      );
-
-
-      registerVote(
-        userId,
-        parseInt(
-          text,
-          10
-        )
-      );
-
-    }
-  );
-
-
-  /* =======================================================
-     DESCONECTADO
-  ======================================================= */
-
-  client.on(
-    "disconnected",
-    function(
-      reason
-    ){
-
-      console.warn(
-        "[POLL] DISCONNECTED:",
-        reason
-      );
-
-
-      if(!pollEnded){
-
-        setStatus(
-          "● RECONNECTING",
-          "error"
-        );
-
-      }
-
-    }
-  );
-
-
-  /* =======================================================
-     NOTICE
-  ======================================================= */
-
-  client.on(
-    "notice",
-    function(
-      channelName,
-      msgid,
-      message
-    ){
-
-      console.warn(
-        "[POLL] NOTICE:",
-        channelName,
-        msgid,
-        message
-      );
-
-    }
-  );
-
-
-  /* =======================================================
-     ERROR
-  ======================================================= */
-
-  client.on(
-    "log",
-    function(
-      message
-    ){
-
-      console.log(
-        "[TMI]",
-        message
-      );
-
-    }
-  );
-
-
-  /* =======================================================
-     CONECTAR
-  ======================================================= */
-
-  client
-    .connect()
-
-    .then(
-      function(){
-
-        console.log(
-          "[POLL] connect() completado"
-        );
-
-      }
-    )
-
-    .catch(
-      function(error){
-
-        console.error(
-          "[POLL] ERROR DE CONEXIÓN:",
-          error
-        );
-
-
-        if(!pollEnded){
-
-          setStatus(
-            "● CHAT ERROR",
-            "error"
-          );
-
-        }
-
-      }
-    );
 
 }
 
 
-/* =========================================================
-   COMPROBAR TMI
-========================================================= */
-
-let attempts =
-  0;
-
-
-const tmiCheck =
-  setInterval(
-    function(){
-
-      attempts++;
-
-
-      if(
-        typeof window.tmi !==
-        "undefined"
-      ){
-
-        clearInterval(
-          tmiCheck
-        );
-
-
-        connectTwitch();
-
-
-        return;
-
-      }
-
-
-      /*
-        5 segundos.
-      */
-
-      if(
-        attempts >= 50
-      ){
-
-        clearInterval(
-          tmiCheck
-        );
-
-
-        console.error(
-          "[POLL] El CDN de TMI.js no respondió."
-        );
-
-
-        setStatus(
-          "● TMI ERROR",
-          "error"
-        );
-
-      }
-
-    },
-    100
-  );
-
-
-/* =========================================================
-   RELOJ
-========================================================= */
-
-setInterval(
-  updateTimer,
-  100
-);
-
-
-})();
-
 </script>
+
 
 </body>
 
